@@ -11,6 +11,10 @@ public class player_movement : MonoBehaviour
 
     public Vector2 movement;
 
+    public Animator animator;
+
+    public SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +30,24 @@ public class player_movement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        
+        if (movement.x != 0 || movement.y != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        //flip
+        if (movement.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (movement.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 }

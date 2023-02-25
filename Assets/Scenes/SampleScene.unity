@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.269091
+  orthographic size: 17
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -20966,6 +20966,7 @@ GameObject:
   - component: {fileID: 1622765360}
   - component: {fileID: 1622765361}
   - component: {fileID: 1622765362}
+  - component: {fileID: 1622765363}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -21013,7 +21014,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 753829593, guid: db69ae85c76caec47ab43012d4245c7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21034,7 +21035,7 @@ Transform:
   m_GameObject: {fileID: 1622765357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4402, y: 1.6453, z: 0}
-  m_LocalScale: {x: 3.6679, y: 3.6679, z: 3.6679}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -21055,6 +21056,8 @@ MonoBehaviour:
   speed: 20
   rb: {fileID: 1622765361}
   movement: {x: 0, y: 0}
+  animator: {fileID: 1622765362}
+  spriteRenderer: {fileID: 1622765358}
 --- !u!50 &1622765361
 Rigidbody2D:
   serializedVersion: 4
@@ -21096,3 +21099,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1622765363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622765357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705c246bbea3d7b4497073510ef5a07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 6458519686312250198, guid: e2b4f3165b2c0394785167305b7cee85, type: 3}
+  coolDownValue: 10
+  coolDown: 0
+  bulletSpeed: 30

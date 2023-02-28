@@ -1,14 +1,9 @@
-using Assets.Scripts.player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
 
-    public Player player = Player.GetInstance;
-
-    public float speed = 10f;
+    public float speed;
 
     public Rigidbody2D rb;
 

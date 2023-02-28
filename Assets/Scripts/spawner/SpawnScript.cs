@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.UIElements.ToolbarMenu;
 
 public class SpawnScript : MonoBehaviour
 {
@@ -34,6 +33,7 @@ public class SpawnScript : MonoBehaviour
                 yield return new WaitForSeconds(spawnTime);
             }
              yield return new WaitForSeconds(waveTime); //yield permet de mettre en pause la corouine pendant "waveTime" secondes
+            nombreEnnemi++;
         }
        
     }

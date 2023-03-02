@@ -5,11 +5,7 @@ using UnityEngine;
 
 public class playerPickUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int PickUpCoolDown;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

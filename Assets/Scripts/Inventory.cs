@@ -6,7 +6,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public GameObject selecedItem;
-    public List<GameObject> itemList;
+    public List<Weapon> itemList;
     public int maxItems = 1;
 
     public static Inventory instance;
@@ -24,24 +24,34 @@ public class Inventory : MonoBehaviour
 
     public Inventory()
     {
-        itemList = new List<GameObject>();
+        itemList = new List<Weapon>();
     }
 
     public void addItem(GameObject item)
     {
         if (itemList.Count >= maxItems)
         {
-            removeItem(selecedItem);
+            //removeItem(selecedItem);
         }
-        itemList.Add(item);
-        selecedItem = item;
-        //Destroy(item);
+        Weapon itemToStore = null;
+        if (item.name.Split(':')[0] == "Gun")
+        {
+            itemToStore = ScriptableObject.CreateInstance<Weapon>();
+        }
+        else
+        {
+            Debug.LogWarning("Item unknown");
+            return;
+        }
+        itemToStore.name = item.name;
+
+        itemList.Add(itemToStore);
+        Destroy(item);
     }
 
-    public void removeItem(GameObject item)
+    public void removeItem(Weapon item)
     {
         Debug.Log(item);
-        Instantiate(item);
         itemList.Remove(item);
     }
 }

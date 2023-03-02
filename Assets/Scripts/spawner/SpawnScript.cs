@@ -29,8 +29,6 @@ public class SpawnScript : MonoBehaviour
                 
                 randomEnnemi = Random.Range(0, 2);  //un ennemi aléatoire
                 randomPosition = Random.Range(0, 4);    //à une position aléatoire
-                //float varianceInt = Random.Range(-2f, 2f);  //pour espacer les ennemis au moment du spawn
-                //Vector3 varianceVector = new Vector3(varianceInt, varianceInt, 0);
                 Instantiate(ennemis[randomEnnemi], spawnPoints[randomPosition].transform.position, Quaternion.identity);
 
                 yield return new WaitForSeconds(spawnTime);

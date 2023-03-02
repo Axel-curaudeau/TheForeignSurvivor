@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InfosEnnemi : MonoBehaviour
 {
-    private int HP=50;
+    public int HP;
 
     // Start is called before the first frame update
     void Start()

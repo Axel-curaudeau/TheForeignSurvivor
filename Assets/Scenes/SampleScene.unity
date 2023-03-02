@@ -415,7 +415,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bc4536ccddc99bb4c9e19ed3fabc0e15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21218,7 +21218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15502ced69331a947bc7a8a96f61ca22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemi: {fileID: 4527212924479709112, guid: 12eaf233fc3f213489a79702f95e0393, type: 3}
+  ennemis:
+  - {fileID: 1420165298558429332, guid: c87cc651eec8adf46931bb9b1bcd0f94, type: 3}
+  - {fileID: 4527212924479709112, guid: 12eaf233fc3f213489a79702f95e0393, type: 3}
   spawnPoints:
   - {fileID: 1761327596}
   - {fileID: 1245478431}

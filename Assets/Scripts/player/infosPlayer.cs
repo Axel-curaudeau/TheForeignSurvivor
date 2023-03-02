@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class InfosEnnemi : MonoBehaviour
+public class infosPlayer : MonoBehaviour
 {
     public int HP;
 
@@ -22,7 +24,8 @@ public class InfosEnnemi : MonoBehaviour
         if (HP <= 0) { death(); }
     }
 
-    public void death() { 
-        Destroy(gameObject);
+    public void death()
+    {
+        Debug.Log("You lose!");
     }
 }

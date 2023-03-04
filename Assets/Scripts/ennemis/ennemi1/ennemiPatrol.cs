@@ -6,10 +6,12 @@ public class ennemiPatrol : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     private Transform target;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").GetComponentInChildren<Transform>();
     }
 

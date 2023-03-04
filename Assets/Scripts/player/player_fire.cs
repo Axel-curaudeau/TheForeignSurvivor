@@ -21,22 +21,22 @@ public class player_fire : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                newBullet(Vector2.left);
+                shoot(Vector2.left, transform.position, Inventory.instance.getSelectedItem());
                 coolDown = coolDownValue;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                newBullet(Vector2.right);
+                shoot(Vector2.right, transform.position, Inventory.instance.getSelectedItem());
                 coolDown = coolDownValue;
             }
             else if (Input.GetKey(KeyCode.UpArrow))
             {
-                newBullet(Vector2.up);
+                shoot(Vector2.up, transform.position, Inventory.instance.getSelectedItem());
                 coolDown = coolDownValue;
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                newBullet(Vector2.down);
+                shoot(Vector2.down, transform.position, Inventory.instance.getSelectedItem());
                 coolDown = coolDownValue;
             }
         }
@@ -49,12 +49,14 @@ public class player_fire : MonoBehaviour
 
 
     }
-    
-    void newBullet(Vector2 Direction)
+
+    public void shoot(Vector2 direction, Vector2 position, Weapon gun)
     {
+        if (gun == null)
         {
-            GameObject newBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
-            newBullet.GetComponent<Rigidbody2D>().velocity = transform.localScale * Direction * bulletSpeed;
+            return;
         }
+        GameObject newProjectile = Instantiate(gun.projectile, position, Quaternion.identity);
+        newProjectile.GetComponent<Rigidbody2D>().velocity = direction * gun.projectileSpeed;
     }
 }

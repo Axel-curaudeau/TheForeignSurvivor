@@ -35,7 +35,15 @@ public class Inventory : MonoBehaviour
             //removeItem(selecedItem);
         }
 
-        Weapon itemToStore = item.GetComponent<Gun>().GunData;
+        Weapon itemToStore = null;
+        if (item.name.Split(':')[0] == "Gun")
+        {
+            itemToStore = item.GetComponent<Gun>().GunData;
+        }
+        else if (item.name.Split(':')[0] == "Sword")
+        {
+            itemToStore = item.GetComponent<Sword>().swordData;
+        }
 
         itemList.Add(itemToStore);
         if (selecedItem == null)

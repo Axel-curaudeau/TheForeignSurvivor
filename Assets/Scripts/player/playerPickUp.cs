@@ -5,20 +5,12 @@ using UnityEngine;
 
 public class playerPickUp : MonoBehaviour
 {
-    private int PickUpCoolDown;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Colision item");
         if (collision.gameObject.tag == "Item")
         {
             Inventory.instance.addItem(collision.gameObject);
+            GetComponent<player_fire>().coolDownValue = Inventory.instance.getSelectedItem().attackSpeed;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

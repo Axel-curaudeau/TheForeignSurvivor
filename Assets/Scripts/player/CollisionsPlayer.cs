@@ -8,6 +8,8 @@ public class CollisionsPlayer : MonoBehaviour
     private int invulnerabilityCurrentTime;
     private bool isInvulnerable;
 
+    public SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +21,25 @@ public class CollisionsPlayer : MonoBehaviour
     {
         if (isInvulnerable == false) // if vulnerable take damage and set isInvulnerable to true
         {
-            if (other.gameObject.tag == "Ennemi" || other.gameObject.tag == "ennemiBullet")
+            int damage;
+            if (other.gameObject.tag == "Ennemi")
             {
-                // 10 a remplacer par une stat de l'arme!
-                gameObject.GetComponentInParent<infosPlayer>().loseHp(10);
+                damage = other.gameObject.GetComponent<InfosEnnemi>().damageOnHit;
+                gameObject.GetComponentInParent<infosPlayer>().loseHp(damage);
 
-
-
+                isInvulnerable = true;
+                StartCoroutine(InvicibilityFlash());
+                invulnerabilityCurrentTime = 0;
             }
-            isInvulnerable = true;
-            invulnerabilityCurrentTime = 0;
+            else if (other.gameObject.tag == "ennemiBullet")
+            {
+                damage = other.gameObject.GetComponent<infosFireBall>().damage;
+                gameObject.GetComponentInParent<infosPlayer>().loseHp(damage);
+
+                isInvulnerable = true;
+                StartCoroutine(InvicibilityFlash());
+                invulnerabilityCurrentTime = 0;
+            }            
         }
 
         if (other.gameObject.tag == "ennemiBullet")
@@ -47,6 +58,17 @@ public class CollisionsPlayer : MonoBehaviour
             {
                 isInvulnerable = false;
             }
+        }
+    }
+
+    public IEnumerator InvicibilityFlash()
+    {
+        while (isInvulnerable)
+        {
+            sprite.color = new Color(1f, 1f, 1f, 0f);
+            yield return new WaitForSeconds(0.15f);
+            sprite.color = new Color(1f, 1f, 1f, 1f);
+            yield return new WaitForSeconds(0.15f);
         }
     }
 }

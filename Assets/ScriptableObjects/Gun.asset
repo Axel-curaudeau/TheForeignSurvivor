@@ -16,6 +16,8 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 0
   durability: 0
-  image: {fileID: 0}
-  name: 
+  projectileSpeed: 30
+  image: {fileID: -1806031056, guid: 040d6a6c4c131e14d8b3da09ad85747d, type: 3}
+  title: 
   description: 
+  projectile: {fileID: 6458519686312250198, guid: e2b4f3165b2c0394785167305b7cee85, type: 3}

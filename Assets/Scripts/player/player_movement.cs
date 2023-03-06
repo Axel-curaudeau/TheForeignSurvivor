@@ -38,13 +38,14 @@ public class player_movement : MonoBehaviour
 
     void FixedUpdate()
     {
+       
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
         // Set the bool to true if we are moving in any position.
         // The expression "movement.x != 0 || movement.y != 0" is a boolean expression that will be true
         //      if either x or y is not 0. If both are 0, then the expression will be false.
         animator.SetBool("isRunning", movement.x != 0 || movement.y != 0);
-        
+
         //flip
         if (movement.x > 0)
         {
@@ -54,5 +55,6 @@ public class player_movement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+        
     }
 }

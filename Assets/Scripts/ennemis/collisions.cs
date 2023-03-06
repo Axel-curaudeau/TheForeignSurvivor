@@ -9,14 +9,13 @@ public class collisions : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "bullet") {
-
-            //le 10 pourra etre remplacer par une stat de l'arme
+        if (collision.gameObject.tag == "bullet")
+        {
             gameObject.GetComponentInParent<InfosEnnemi>().loseHp(10);
 
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 

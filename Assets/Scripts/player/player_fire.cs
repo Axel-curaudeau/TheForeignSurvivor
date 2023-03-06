@@ -9,52 +9,55 @@ public class player_fire : MonoBehaviour
     public int coolDown;
     public int bulletSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         if (coolDown <= 0)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                newBullet(Vector2.left);
+                attack(Vector2.left, transform.position, Inventory.instance.getSelectedItem());
                 coolDown = coolDownValue;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                newBullet(Vector2.right);
+                attack(Vector2.right, transform.position, Inventory.instance.getSelectedItem());
                 coolDown = coolDownValue;
             }
             else if (Input.GetKey(KeyCode.UpArrow))
             {
-                newBullet(Vector2.up);
+                attack(Vector2.up, transform.position, Inventory.instance.getSelectedItem());
                 coolDown = coolDownValue;
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                newBullet(Vector2.down);
+                attack(Vector2.down, transform.position, Inventory.instance.getSelectedItem());
                 coolDown = coolDownValue;
             }
         }
         else{
             coolDown--;
         }
-
-        
-
-
-
     }
-    
-    void newBullet(Vector2 Direction)
+
+    public void attack(Vector2 direction, Vector2 position, Weapon weapon)
     {
+        if (weapon == null)
         {
-            GameObject newBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
-            newBullet.GetComponent<Rigidbody2D>().velocity = transform.localScale * Direction * bulletSpeed;
+            return;
+        }
+        if (weapon.name == "Gun")
+        {
+            GameObject newProjectile = Instantiate(weapon.projectile, position, Quaternion.identity);
+            newProjectile.GetComponent<Rigidbody2D>().velocity = direction * weapon.projectileSpeed;
+        }
+        else if (weapon.name == "Sword")
+        {
+            player_movement playermovementScript = transform.GetComponent<player_movement>();
+
+            Debug.Log(direction);
+            GameObject Sword = Instantiate(weapon.projectile, position + new Vector2(0, -1.5f) + (2 * direction), Quaternion.identity, transform);
+            
+            Sword.GetComponent<Sword>().Attack(direction);
         }
     }
 }

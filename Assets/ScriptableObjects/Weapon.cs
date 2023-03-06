@@ -6,8 +6,9 @@ public class Weapon : ScriptableObject
 {
     public int id;
     public int damage;
-    public float attackSpeed;
+    public int attackSpeed;
     public int durability;
+    public float projectileSpeed;
     public Sprite image;
     public string title;
     public string description;

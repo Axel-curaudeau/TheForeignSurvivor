@@ -3,6 +3,7 @@ using UnityEngine;
 public class InfosEnnemi : MonoBehaviour
 {
     public int HP;
+    public int damageOnHit;
 
     // Start is called before the first frame update
     void Start()

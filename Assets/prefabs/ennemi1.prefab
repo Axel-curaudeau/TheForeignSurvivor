@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 50
+  damageOnHit: 10
 --- !u!114 &1420165298558429339
 MonoBehaviour:
   m_ObjectHideFlags: 0

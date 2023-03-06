@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3977240979371514566}
   - component: {fileID: 6408388527640451200}
   - component: {fileID: -7069805958717197412}
+  - component: {fileID: 2507741027149532715}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: ennemiBullet
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball_velocity: {x: 0, y: 0, z: 0}
-  lifeTime: 500
+  lifeTime: 600
 --- !u!61 &-7069805958717197412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +149,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &2507741027149532715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869788265041688787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3072925d72e058449c9181e51853a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7

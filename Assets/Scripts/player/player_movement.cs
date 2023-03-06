@@ -13,6 +13,17 @@ public class player_movement : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
+    public static player_movement instance;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.Log("There is more than one instance of player_movement in the scene!");
+            return;
+        }
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

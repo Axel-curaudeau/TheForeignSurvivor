@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
+  damageOnHit: 10
 --- !u!50 &-2141432285487341688
 Rigidbody2D:
   serializedVersion: 4

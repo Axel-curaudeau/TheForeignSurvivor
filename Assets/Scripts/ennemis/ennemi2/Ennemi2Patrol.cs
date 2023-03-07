@@ -4,6 +4,7 @@ public class Ennemi2Patrol : MonoBehaviour
 {
     public int speed;
     public SpriteRenderer sprite;
+    private Rigidbody2D rb;
 
     private Vector3 target; //Where the ennemi will go 
 
@@ -11,16 +12,18 @@ public class Ennemi2Patrol : MonoBehaviour
     void Start()
     {
         chosePosition();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         float distance = Mathf.Abs(transform.position.x - target.x) + Mathf.Abs(transform.position.y - target.y);
-        if (distance > 0.3 )
+        if (distance !=0 )
         {
-            Vector3 direction = target - transform.position;
-            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+            Vector3 direction = (target - transform.position).normalized;
+            rb.velocity = direction * speed;
+            
         }
     }
 

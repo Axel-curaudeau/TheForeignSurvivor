@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Drawing;
 using UnityEngine;
 
 public class SpawnScript : MonoBehaviour
@@ -26,8 +27,8 @@ public class SpawnScript : MonoBehaviour
         {
             for (int i = 0; i <= nombreEnnemi; i++)
             {
-                
-                randomEnnemi = Random.Range(0, 2);  //un ennemi aléatoire
+
+                randomEnnemi = Random.Range(0, ennemis.Length);  //un ennemi aléatoire
                 randomPosition = Random.Range(0, 4);    //à une position aléatoire
                 Instantiate(ennemis[randomEnnemi], spawnPoints[randomPosition].transform.position, Quaternion.identity);
 

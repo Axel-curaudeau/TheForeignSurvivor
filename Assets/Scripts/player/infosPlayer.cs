@@ -5,6 +5,8 @@ public class infosPlayer : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    public int experience=0;
+
     public healthBarre barre;
 
     

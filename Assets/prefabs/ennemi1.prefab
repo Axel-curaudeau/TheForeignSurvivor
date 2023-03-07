@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 50
   damageOnHit: 10
+  gainExperience: 10
 --- !u!114 &1420165298558429339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,5 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a2310b476d0a24fb9e7e596cfe6c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 7
   spriteRenderer: {fileID: 1420165298558429333}

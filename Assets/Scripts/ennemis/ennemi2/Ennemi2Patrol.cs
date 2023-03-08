@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ennemi2Patrol : MonoBehaviour
@@ -29,23 +30,9 @@ public class Ennemi2Patrol : MonoBehaviour
 
     private void chosePosition()
     {
-        int direction = Random.Range(0, 4);
+        float x = Random.Range(-95f, 97f);
+        float y = Random.Range(-46f, 43f);
 
-        if (direction == 0)
-        {
-            target= new Vector3(Random.Range(-31f,33f),13f,0f);
-        }
-        else if (direction == 1)
-        {
-            target = new Vector3(Random.Range(-31f, 33f), -16f, 0f);
-        }
-        else if (direction == 2)
-        {
-            target = new Vector3(33f, Random.Range(-16f, 13f), 0f);
-        }
-        else
-        {
-            target= new Vector3(-31f,Random.Range(-16f,13f),0f);
-        }
+        target = new Vector3 (x, y, 0);
     }
 }

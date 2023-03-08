@@ -26,11 +26,16 @@ public class SpawnScript : MonoBehaviour
 
         while (isGenerating)
         {
-            for (int i = 0; i <= nombreEnnemi; i++)
+            for (int i = 0; i < nombreEnnemi; i++)
             {
 
                 randomEnnemi = Random.Range(0, ennemis.Length);  //un ennemi aléatoire
-                randomPosition = Random.Range(0, 4);    //à une position aléatoire
+
+                do
+                {
+                    randomPosition = Random.Range(0, spawnPoints.Length);    //à une position aléatoire
+                } while (randomPosition == ClosestToPlayer());              //mais pas la plus proche du joueur!
+
                 Instantiate(ennemis[randomEnnemi], spawnPoints[randomPosition].transform.position, Quaternion.identity);
 
                 yield return new WaitForSeconds(spawnTime);
@@ -39,5 +44,26 @@ public class SpawnScript : MonoBehaviour
             nombreEnnemi++;
         }
        
+    }
+
+    private int ClosestToPlayer()
+    {
+        int closest = 0;
+        Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        float distanceMin = Vector3.Distance(playerPos, spawnPoints[closest].transform.position);
+        Debug.Log(playerPos);
+        float distance;
+
+        for (int i= 0; i<spawnPoints.Length;i++)
+        {
+            distance = Vector3.Distance(playerPos, spawnPoints[i].transform.position);
+
+            if (distance < distanceMin) { 
+                closest = i;
+                distanceMin = distance;
+            }
+        }
+
+        return closest;
     }
 }

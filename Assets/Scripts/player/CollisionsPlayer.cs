@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionsPlayer : MonoBehaviour
@@ -31,7 +30,14 @@ public class CollisionsPlayer : MonoBehaviour
                 StartCoroutine(InvicibilityFlash());
                 invulnerabilityCurrentTime = 0;
             }
-            else if (other.gameObject.tag == "ennemiBullet")
+        }  
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (isInvulnerable == false) { 
+            int damage;
+            if (other.gameObject.tag == "ennemiBullet")
             {
                 damage = other.gameObject.GetComponent<infosFireBall>().damage;
                 gameObject.GetComponentInParent<infosPlayer>().loseHp(damage);
@@ -39,7 +45,7 @@ public class CollisionsPlayer : MonoBehaviour
                 isInvulnerable = true;
                 StartCoroutine(InvicibilityFlash());
                 invulnerabilityCurrentTime = 0;
-            }            
+            }
         }
 
         if (other.gameObject.tag == "ennemiBullet")

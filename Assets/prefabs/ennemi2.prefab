@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9337218d9fa2b6f4aa7f26230afbef4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   sprite: {fileID: 4527212924479709118}
 --- !u!114 &-44293545821578745
 MonoBehaviour:
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 20
   damageOnHit: 10
+  gainExperience: 20
 --- !u!50 &-2141432285487341688
 Rigidbody2D:
   serializedVersion: 4

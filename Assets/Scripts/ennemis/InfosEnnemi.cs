@@ -4,6 +4,8 @@ public class InfosEnnemi : MonoBehaviour
 {
     public int HP;
     public int damageOnHit;
+    public int gainExperience;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,5 +27,12 @@ public class InfosEnnemi : MonoBehaviour
 
     public void death() { 
         Destroy(gameObject);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        giveExperience(player);
+    }
+
+    public void giveExperience(GameObject player)
+    {
+        player.GetComponent<infosPlayer>().experience += gainExperience;
     }
 }

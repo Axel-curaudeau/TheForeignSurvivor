@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -30,29 +31,27 @@ public class Inventory : MonoBehaviour
 
     public void addItem(GameObject item)
     {
-        if (itemList.Count >= maxItems)
+        if (itemList.Count < maxItems)
         {
-            return;
-        }
+            Weapon itemToStore = null;
+            if (item.name.Split(':')[0] == "Gun")
+            {
+                itemToStore = item.GetComponent<Gun>().GunData;
+            }
+            else if (item.name.Split(':')[0] == "Sword")
+            {
+                itemToStore = item.GetComponent<Sword>().swordData;
+            }
 
-        Weapon itemToStore = null;
-        if (item.name.Split(':')[0] == "Gun")
-        {
-            itemToStore = item.GetComponent<Gun>().GunData;
             GetComponentInChildren<SlotRenderUI>().setItemImage(itemToStore.image);
-        }
-        else if (item.name.Split(':')[0] == "Sword")
-        {
-            itemToStore = item.GetComponent<Sword>().swordData;
-            GetComponentInChildren<SlotRenderUI>().setItemImage(itemToStore.image);
-        }
 
-        itemList.Add(itemToStore);
-        if (selecedItem == null)
-        {
-            selecedItem = itemToStore;
+            itemList.Add(itemToStore);
+            if (selecedItem == null)
+            {
+                selecedItem = itemToStore;
+            }
+            Destroy(item);
         }
-        Destroy(item);
     }
 
     public void removeItem(Weapon item)
@@ -68,14 +67,23 @@ public class Inventory : MonoBehaviour
 
     public void nextItem()
     {
-        int itemIndex = itemList.IndexOf(selecedItem);
-        if (itemIndex >= itemList.Count - 1) 
+        if (selecedItem != null)
         {
-            selecedItem = itemList[0];
+            int itemIndex = itemList.IndexOf(selecedItem);
+            if (itemIndex >= itemList.Count - 1)
+            {
+                selecedItem = itemList[0];
+            }
+            else
+            {
+                selecedItem = itemList[itemIndex + 1];
+            }
         }
-        else
-        {
-            selecedItem = itemList[itemIndex + 1];
-        }
+    }
+
+    public void upgradeSlot()
+    {
+        maxItems = 2;
+
     }
 }

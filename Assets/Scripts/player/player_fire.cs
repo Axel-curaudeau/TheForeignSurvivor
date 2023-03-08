@@ -53,8 +53,6 @@ public class player_fire : MonoBehaviour
         else if (weapon.name == "Sword")
         {
             player_movement playermovementScript = transform.GetComponent<player_movement>();
-
-            //GameObject Sword = Instantiate(weapon.projectile, position + new Vector2(0, -1.5f) + (2 * direction), Quaternion.identity, transform);
             GameObject Sword = Instantiate(weapon.projectile, position + new Vector2(0, -1.5f) + (2 * direction), Quaternion.identity);
             Sword.GetComponent<SwordAttackFollowPlayer>().setPlayerAndDirection(transform.gameObject, direction);
             

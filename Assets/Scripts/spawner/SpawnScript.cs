@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Drawing;
 using UnityEngine;
 
 public class SpawnScript : MonoBehaviour
@@ -23,6 +22,8 @@ public class SpawnScript : MonoBehaviour
 
     IEnumerator generateWave() //ceci est une coroutine 
     {
+        yield return new WaitForSeconds(10);    //the player have 10 secondes to choose a weapon
+
         while (isGenerating)
         {
             for (int i = 0; i <= nombreEnnemi; i++)

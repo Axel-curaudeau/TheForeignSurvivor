@@ -1,11 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class infosPlayer : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
 
+    public int experience=0;
+    public Text experienceText;
+
     public healthBarre barre;
+
+
 
     
 
@@ -19,7 +25,7 @@ public class infosPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        experienceText.text = "Xp : " + experience.ToString();
     }
 
     public void loseHp(int damage)
@@ -36,4 +42,5 @@ public class infosPlayer : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
     }
+
 }

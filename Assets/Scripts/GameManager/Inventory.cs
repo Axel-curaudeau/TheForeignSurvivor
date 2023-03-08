@@ -39,10 +39,12 @@ public class Inventory : MonoBehaviour
         if (item.name.Split(':')[0] == "Gun")
         {
             itemToStore = item.GetComponent<Gun>().GunData;
+            GetComponentInChildren<SlotRenderUI>().setItemImage(itemToStore.image);
         }
         else if (item.name.Split(':')[0] == "Sword")
         {
             itemToStore = item.GetComponent<Sword>().swordData;
+            GetComponentInChildren<SlotRenderUI>().setItemImage(itemToStore.image);
         }
 
         itemList.Add(itemToStore);

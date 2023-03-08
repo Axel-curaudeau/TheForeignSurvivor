@@ -1,5 +1,6 @@
 using System.Data;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Inventory/Weapon")]
 public class Weapon : ScriptableObject

@@ -17,6 +17,11 @@ public class collisions : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.tag == "Sword")
+        {
+            gameObject.GetComponentInParent<InfosEnnemi>().loseHp(collision.GetComponent<Sword>().swordData.damage);
+        }
     }
 
     // Update is called once per frame

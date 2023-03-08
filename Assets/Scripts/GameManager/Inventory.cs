@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
     {
         if (itemList.Count >= maxItems)
         {
-            //removeItem(selecedItem);
+            return;
         }
 
         Weapon itemToStore = null;
@@ -62,5 +62,18 @@ public class Inventory : MonoBehaviour
     public Weapon getSelectedItem()
     {
         return selecedItem;
+    }
+
+    public void nextItem()
+    {
+        int itemIndex = itemList.IndexOf(selecedItem);
+        if (itemIndex >= itemList.Count - 1) 
+        {
+            selecedItem = itemList[0];
+        }
+        else
+        {
+            selecedItem = itemList[itemIndex + 1];
+        }
     }
 }

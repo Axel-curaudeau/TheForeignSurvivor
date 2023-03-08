@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1948989923615648790}
   - component: {fileID: 5976182562120045750}
-  - component: {fileID: 7721103933374829951}
   - component: {fileID: 7976089298655181934}
   - component: {fileID: 1452983490001305121}
+  - component: {fileID: 774816210960481852}
+  - component: {fileID: 2631234280228670092}
   m_Layer: 0
   m_Name: SwordAnimation
-  m_TagString: Player
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4225043349462519988}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -3.97, y: -4.93, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,32 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7721103933374829951
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4225043349462519988}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0034834892}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5625, y: 2.375}
-    newSize: {x: 1.5625, y: 2.375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.5625, y: 0.612427}
-  m_EdgeRadius: 0
 --- !u!95 &7976089298655181934
 Animator:
   serializedVersion: 5
@@ -148,3 +123,31 @@ MonoBehaviour:
   swordData: {fileID: 11400000, guid: b44a07a0a8075d546a2293a444813237, type: 2}
   animator: {fileID: 7976089298655181934}
   spriteRenderer: {fileID: 5976182562120045750}
+--- !u!70 &774816210960481852
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225043349462519988}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.013160108, y: 0.02632224}
+  m_Size: {x: 1.5361767, y: 2.217072}
+  m_Direction: 0
+--- !u!114 &2631234280228670092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225043349462519988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071ae7de0aa7296448b69e0b83706d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -24,8 +24,7 @@ public class Sword : MonoBehaviour
     public IEnumerator AttackSequence()
     {
         animator.SetTrigger("Attacking");
-        yield return new WaitForSeconds(0.45f);
-        Debug.Log("Attack");
+        yield return new WaitForSeconds(0.30f);
         Destroy(transform.gameObject);
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Ennemi
   - ennemiBullet
+  - Sword
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ using UnityEngine;
 public class playerPickUp : MonoBehaviour
 {
     bool isOnItem = false;
-    GameObject itemOn = null;
+    public GameObject itemOn = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

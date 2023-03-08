@@ -5,6 +5,7 @@ public class PowerUps : MonoBehaviour
     public int experience;
     public GameObject shield;
     private bool haveShield=false;
+    private bool haveSlot=false;
     
     
     // Start is called before the first frame update
@@ -19,6 +20,11 @@ public class PowerUps : MonoBehaviour
         experience = gameObject.GetComponent<infosPlayer>().experience;
 
         if (experience>=1000 && haveShield == false) { ShieldApparition(); }
+
+        if(!haveSlot && experience >= 500)
+        {
+            Inventory.instance.upgradeSlot();
+        }
     }
 
     private void ShieldApparition()

@@ -23,6 +23,7 @@ public class playerPickUp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Inventory.instance.nextItem();
+            Inventory.instance.GetComponent<SlotRenderUI>().changeSlot();
         }
 
         if (Input.GetKeyDown(KeyCode.E) && isOnItem)

@@ -45,6 +45,8 @@ public class CollisionsPlayer : MonoBehaviour
                 isInvulnerable = true;
                 StartCoroutine(InvicibilityFlash());
                 invulnerabilityCurrentTime = 0;
+
+                Debug.Log(tag);
             }
         }
 

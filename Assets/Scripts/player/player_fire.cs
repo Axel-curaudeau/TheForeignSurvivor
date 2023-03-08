@@ -16,22 +16,22 @@ public class player_fire : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 attack(Vector2.left, transform.position, Inventory.instance.getSelectedItem());
-                coolDown = coolDownValue;
+                coolDown = Inventory.instance.getSelectedItem().attackSpeed;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 attack(Vector2.right, transform.position, Inventory.instance.getSelectedItem());
-                coolDown = coolDownValue;
+                coolDown = Inventory.instance.getSelectedItem().attackSpeed;
             }
             else if (Input.GetKey(KeyCode.UpArrow))
             {
                 attack(Vector2.up, transform.position, Inventory.instance.getSelectedItem());
-                coolDown = coolDownValue;
+                coolDown = Inventory.instance.getSelectedItem().attackSpeed;
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
                 attack(Vector2.down, transform.position, Inventory.instance.getSelectedItem());
-                coolDown = coolDownValue;
+                coolDown = Inventory.instance.getSelectedItem().attackSpeed;
             }
         }
         else{
@@ -54,8 +54,9 @@ public class player_fire : MonoBehaviour
         {
             player_movement playermovementScript = transform.GetComponent<player_movement>();
 
-            Debug.Log(direction);
-            GameObject Sword = Instantiate(weapon.projectile, position + new Vector2(0, -1.5f) + (2 * direction), Quaternion.identity, transform);
+            //GameObject Sword = Instantiate(weapon.projectile, position + new Vector2(0, -1.5f) + (2 * direction), Quaternion.identity, transform);
+            GameObject Sword = Instantiate(weapon.projectile, position + new Vector2(0, -1.5f) + (2 * direction), Quaternion.identity);
+            Sword.GetComponent<SwordAttackFollowPlayer>().setPlayerAndDirection(transform.gameObject, direction);
             
             Sword.GetComponent<Sword>().Attack(direction);
         }

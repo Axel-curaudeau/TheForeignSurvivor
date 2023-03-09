@@ -13,6 +13,10 @@ public class player_fire : MonoBehaviour
     {
         if (coolDown <= 0)
         {
+            if (Inventory.instance.getSelectedItem() == null)
+            {
+                return;
+            }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 attack(Vector2.left, transform.position, Inventory.instance.getSelectedItem());

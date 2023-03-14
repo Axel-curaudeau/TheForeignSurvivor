@@ -146,6 +146,7 @@ MonoBehaviour:
   HP: 20
   damageOnHit: 10
   gainExperience: 20
+  HeartPrefab: {fileID: 6315780339447115313, guid: 73be4004eb3c374488e3242df70d00af, type: 3}
 --- !u!50 &-2141432285487341688
 Rigidbody2D:
   serializedVersion: 4

@@ -35,6 +35,21 @@ public class infosPlayer : MonoBehaviour
         if (currentHealth <= 0) { death(); }
     }
 
+    public bool addHP(int HP)
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += HP;
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            barre.SetHealth(currentHealth);
+            return true;
+        }
+        return false;
+    }
+
     public void death()
     {
         GameOverManager.instance.OnPlayerDeath();

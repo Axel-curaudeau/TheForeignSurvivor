@@ -25,11 +25,23 @@ public class playerPickUp : MonoBehaviour
             Inventory.instance.nextItem();
             Inventory.instance.GetComponent<SlotRenderUI>().changeSlot();
         }
-
-        if (Input.GetKeyDown(KeyCode.E) && isOnItem)
+        if (isOnItem)
         {
-            Inventory.instance.addItem(itemOn);
+            if (itemOn.name.Split(':')[0] == "Heart")
+            {
+                if (GetComponent<infosPlayer>().addHP(20))
+                {
+                    Destroy(itemOn);
+                    itemOn = null;
+                }
+            }
+
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                Inventory.instance.addItem(itemOn);
+            }
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

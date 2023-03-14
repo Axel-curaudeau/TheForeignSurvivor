@@ -51,7 +51,6 @@ public class SpawnScript : MonoBehaviour
         int closest = 0;
         Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         float distanceMin = Vector3.Distance(playerPos, spawnPoints[closest].transform.position);
-        Debug.Log(playerPos);
         float distance;
 
         for (int i= 0; i<spawnPoints.Length;i++)

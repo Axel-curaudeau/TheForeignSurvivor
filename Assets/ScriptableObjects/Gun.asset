@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 10
   durability: 0
-  projectileSpeed: 30
+  projectileSpeed: 100
   image: {fileID: -1806031056, guid: 040d6a6c4c131e14d8b3da09ad85747d, type: 3}
   title: 
   description: 

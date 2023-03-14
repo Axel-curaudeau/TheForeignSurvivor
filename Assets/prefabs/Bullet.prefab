@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball_velocity: {x: 0, y: 0, z: 0}
-  lifeTime: 500
+  lifeTime: 1000
 --- !u!61 &-6125500017825372053
 BoxCollider2D:
   m_ObjectHideFlags: 0

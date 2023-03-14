@@ -51,7 +51,7 @@ public class player_fire : MonoBehaviour
         }
         if (weapon.name == "Gun")
         {
-            GameObject newProjectile = Instantiate(weapon.projectile, position, Quaternion.identity);
+            GameObject newProjectile = Instantiate(weapon.projectile, position + new Vector2(0, -1), Quaternion.identity);
             newProjectile.GetComponent<Rigidbody2D>().velocity = direction * weapon.projectileSpeed;
         }
         else if (weapon.name == "Sword")

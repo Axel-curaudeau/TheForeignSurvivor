@@ -41,6 +41,7 @@ public class infosPlayer : MonoBehaviour
         player_movement.instance.enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<player_fire>().enabled = false;
     }
 
 }

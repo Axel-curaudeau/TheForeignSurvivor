@@ -37,6 +37,7 @@ public class SpawnScript : MonoBehaviour
                 } while (randomPosition == ClosestToPlayer());              //mais pas la plus proche du joueur!
 
                 Instantiate(ennemis[randomEnnemi], spawnPoints[randomPosition].transform.position, Quaternion.identity);
+                enemiesCounter.addEnemy();
 
                 yield return new WaitForSeconds(spawnTime);
             }

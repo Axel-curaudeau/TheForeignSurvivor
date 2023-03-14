@@ -48,7 +48,8 @@ When you kill an enemy, you gain experience. When you have enough experience, yo
 Since the presentation given to the teachers, we add some features:
 - Annoucement of power ups
 - Pause menu
-- heart giving life points looted from enemies (1% chance of drop, 1 heart = 20 life point)
+- Heart collectible giving life points looted from enemies (1% chance of drop, 1 heart = 20 life point)
+- Show the number of enemies still alive
 
 # Non developed features:
 

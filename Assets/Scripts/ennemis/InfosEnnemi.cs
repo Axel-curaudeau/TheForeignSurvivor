@@ -30,7 +30,7 @@ public class InfosEnnemi : MonoBehaviour
         Destroy(gameObject);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         giveExperience(player);
-        lootHP(1);
+        lootHP(2);
         enemiesCounter.removeEnemy();
     }
 

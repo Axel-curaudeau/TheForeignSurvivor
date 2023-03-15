@@ -1,6 +1,6 @@
 # **The Foreign Survivor**
 
-This game was developped for a course at the faculty of engineering of the unervisty of Porto. It is a 2D top view game where you have to survive as long as possible to waves of enemies. 
+This game was developped for a course at the faculty of engineering of the university of Porto. It is a 2D top view game where you have to survive as long as possible to waves of enemies. 
 
 You can move around and kill enemies. You have two weapons: a sword and a gun.
 

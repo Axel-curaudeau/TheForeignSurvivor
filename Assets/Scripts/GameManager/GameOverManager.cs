@@ -25,6 +25,7 @@ public class GameOverManager : MonoBehaviour
     {
         //reload scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        enemiesCounter.Reset();
 
         //place the player
 

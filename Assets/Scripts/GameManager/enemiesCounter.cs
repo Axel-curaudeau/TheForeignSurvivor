@@ -21,4 +21,9 @@ public class enemiesCounter : MonoBehaviour
     {
         gameObject.GetComponent<Text>().text = "enemies alive : " + enemiesCount.ToString();
     }
+
+    public static void Reset()
+    {
+        enemiesCount=0;
+    }
 }

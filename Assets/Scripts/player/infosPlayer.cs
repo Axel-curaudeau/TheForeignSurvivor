@@ -54,7 +54,7 @@ public class infosPlayer : MonoBehaviour
     {
         GameOverManager.instance.OnPlayerDeath();
         player_movement.instance.enabled = false;
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<player_fire>().enabled = false;
     }
